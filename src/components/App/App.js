@@ -13,17 +13,29 @@ function App() {
 
 
   //Mostrar el detalle de una movie
-  
+const type = search ? 'search' : 'discover'
 
   useEffect(() => {
-    const fetchMovies = fetch(`${URL_BASE}/movie/560?api_key=${API_KEY}`)
+    const fetchMovies = fetch(`${URL_BASE}/${type}/movie?api_key=${API_KEY}`)
       .then((response) => response.json())
-      .then((data) => setMovies(data));
+      .then((data) => {
+        const allMovie = data.results
+        setMovies(allMovie);
+        console.log(allMovie);
+  })
   }, []);
   
   return (
     <div className="App">
-      <div>{<img src={`${URL_IMAGE}${movies.poster_path}`}></img>}</div>
+      {
+        movies?.map((movie) => (
+          <div key={movie.id}>
+            <img className='image-poster' src={`${URL_IMAGE}${movie.poster_path}`} alt={movie.title} />
+            <h2>{movie.title}</h2>
+            <button onClick={() => setTrailer(movie.trailer)}>Ver trailer</button>
+          </div>
+          ))
+      }
     </div>
   );
 }
