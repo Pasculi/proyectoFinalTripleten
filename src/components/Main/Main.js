@@ -14,8 +14,8 @@ const Main = ({
   //Mostrar el detalle de una movie
   
   const fetchMovies = async () => {
-    const type = search ? "search" : "discover";
-    await fetch(`${URL_BASE}/${type}/movie?api_key=${API_KEY}`)
+    const type = search ? "search" : "upcoming";
+    await fetch(`${URL_BASE}/movie/${type}?api_key=${API_KEY}`)
       .then((response) => response.json())
       .then((data) => {
         const allMovie = data.results;

@@ -7,8 +7,8 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <p>
-          &copy; {new Date().getFullYear()} Mi Aplicación. Todos los derechos
-          reservados.
+          &copy; {new Date().getFullYear()} Cinema. Todos los derechos
+          reservados. Diseño y desarrollo por Jorge R. Sepúlveda Turpie.
         </p>
         <ul className="footer-links">
           <li>

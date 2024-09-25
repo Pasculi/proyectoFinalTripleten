@@ -5,7 +5,7 @@ import "./App.css";
 import Pagination from "../Pagination/Pagination";
 import Main from "../Main/Main";
 import Card from "../Card/Card";
-import { api } from "../../utils/ApiMovie";
+import api  from "../../utils/ApiMovie";
 import Footer from "../Footer/Footer";
 
 
@@ -22,7 +22,8 @@ function App() {
     setLimitMovies(limitMovies + 3);
   };
 
-
+  console.log(api.getPopular());
+  
   return (
     <>
       <Header/>

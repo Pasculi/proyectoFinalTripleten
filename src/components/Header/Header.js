@@ -19,7 +19,9 @@ const Header = () => {
           <li>
             <a href="/contact">Contacto</a>
           </li>
-        </ul>
+        </ul><br />
+        <label htmlFor="">Buscar movie </label>
+        <input type="text" />
       </nav>
     </header>
   );
