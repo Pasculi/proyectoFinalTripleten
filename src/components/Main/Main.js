@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { API_KEY, TOKEN, URL_BASE, URL_IMAGE } from "../../utils/constants";
 import "./Main.css";
-import {api} from '../../utils/ApiMovie'
+
 const Main = ({
   search,
   movies,
   setMovies,
   setTrailer,
+  loading,
   setLoading,
   limitMovies,
 }) => {

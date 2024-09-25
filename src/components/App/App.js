@@ -6,6 +6,8 @@ import Pagination from "../Pagination/Pagination";
 import Main from "../Main/Main";
 import Card from "../Card/Card";
 import { api } from "../../utils/ApiMovie";
+import Footer from "../Footer/Footer";
+
 
 function App() {
   const [search, setSearch] = useState("");
@@ -23,6 +25,7 @@ function App() {
 
   return (
     <>
+      <Header/>
       <Card />
       <Main
         search={search}
@@ -31,9 +34,11 @@ function App() {
         setMovies={setMovies}
         setTrailer={setTrailer}
         limitMovies={limitMovies}
+        loading={loading}
         setLoading={setLoading}
       />
       <Pagination mostrarMas={mostrarMas} />
+      <Footer />
     </>
   );
 }

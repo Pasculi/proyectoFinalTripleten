@@ -37,4 +37,5 @@
 }
 .pagination-btn:hover{
   box-shadow: 0 .0625em .125em rgb(66, 66, 66);
+  outline: 2px solid #fff;
 }
