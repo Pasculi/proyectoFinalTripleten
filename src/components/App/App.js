@@ -1,42 +1,40 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import YouTube from "react-youtube";
 import Header from "../Header/Header";
-import { API_KEY, TOKEN, URL_BASE, URL_IMAGE } from "../../utils/constants";
 import "./App.css";
+import Pagination from "../Pagination/Pagination";
+import Main from "../Main/Main";
+import Card from "../Card/Card";
+import { api } from "../../utils/ApiMovie";
 
 function App() {
   const [search, setSearch] = useState("");
   const [movies, setMovies] = useState([]);
   const [trailer, setTrailer] = useState(null);
-  const [movie, setMovie] = useState({});
-  const [playing, serPlaying] = useState(false);
+  const [moviesPerPage, setMoviesPerPage] = useState(6);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [limitMovies, setLimitMovies] = useState(3);
+  const [loading, setLoading] = useState(false);
+
+  const mostrarMas = () => {
+    setLimitMovies(limitMovies + 3);
+  };
 
 
-  //Mostrar el detalle de una movie
-const type = search ? 'search' : 'discover'
-
-  useEffect(() => {
-    const fetchMovies = fetch(`${URL_BASE}/${type}/movie?api_key=${API_KEY}`)
-      .then((response) => response.json())
-      .then((data) => {
-        const allMovie = data.results
-        setMovies(allMovie);
-        console.log(allMovie);
-  })
-  }, []);
-  
   return (
-    <div className="App">
-      {
-        movies?.map((movie) => (
-          <div key={movie.id}>
-            <img className='image-poster' src={`${URL_IMAGE}${movie.poster_path}`} alt={movie.title} />
-            <h2>{movie.title}</h2>
-            <button onClick={() => setTrailer(movie.trailer)}>Ver trailer</button>
-          </div>
-          ))
-      }
-    </div>
+    <>
+      <Card />
+      <Main
+        search={search}
+        setSearch={setSearch}
+        movies={movies}
+        setMovies={setMovies}
+        setTrailer={setTrailer}
+        limitMovies={limitMovies}
+        setLoading={setLoading}
+      />
+      <Pagination mostrarMas={mostrarMas} />
+    </>
   );
 }
 export default App;

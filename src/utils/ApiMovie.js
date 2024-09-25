@@ -1,4 +1,4 @@
-import { API_KEY, URL_BASE, URL_IMAGE } from './constants'
+import { API_KEY, URL_BASE} from './constants'
 
 class ApiMovie {
   constructor(URL_BASE, API_KEY) {
@@ -8,9 +8,17 @@ class ApiMovie {
   setToken(API_KEY) {
     this._token = `Bearer ${API_KEY}`;
   }
+  //Mostrar el detalle de una movie
 
-  getDiscover() {
-    return fetch(`${this._url}/discover?api_key=${this._token}`);
+  getDiscover({ search, setMovies }) {
+    const type = search ? "search" : "discover";
+    return fetch(`${URL_BASE}/${type}/movie?api_key=${API_KEY}`)
+        .then((response) => response.json())
+        .then((data) => {
+          const allMovie = data.results;
+          setMovies(allMovie);
+          console.log(allMovie);
+        });
   }
 }
 const api = new ApiMovie(`${URL_BASE}, ${API_KEY}`)
