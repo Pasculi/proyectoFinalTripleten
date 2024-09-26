@@ -7,6 +7,7 @@ import Main from "../Main/Main";
 import Card from "../Card/Card";
 
 import Footer from "../Footer/Footer";
+import Navigation from "../Navigation/Navigation";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -26,6 +27,7 @@ function App() {
   return (
     <>
       <Header />
+      <Navigation />
       <Card />
       <Main
         movies={movies}

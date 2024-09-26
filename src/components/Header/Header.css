@@ -1,15 +1,29 @@
-.header {
-  display         : flex;
-  justify-content : space-between;
-  align-items     : center;
+.header {  
   padding         : 20px;
   background-color: #8f0e0e;
   color           : white;
 }
+.header-container{
+  width: 60%;
+  margin: auto;
+display : flex;
+flex-direction: row;
+justify-content : space-between;
+align-items     : center;
+}
+.header-search{
+  width: 250px;
+  height: 35px;
+  padding:0 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+
+}
 
 .logo-container {
   width: 150px;
-  /* Ajusta el tamaño del contenedor */
+
 }
 
 .logo {
@@ -17,19 +31,3 @@
   height: auto;
 }
 
-.nav-menu ul {
-  list-style: none;
-  display   : flex;
-  gap       : 20px;
-}
-
-.nav-menu a {
-  color          : white;
-  text-decoration: none;
-  font-weight    : bold;
-}
-
-.nav-menu a:hover {
-  color: #ffcc00;
-  /* Un color amarillo al pasar el ratón */
-}
