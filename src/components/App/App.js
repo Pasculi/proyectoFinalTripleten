@@ -3,7 +3,7 @@ import YouTube from "react-youtube";
 import Header from "../Header/Header";
 import "./App.css";
 import Pagination from "../Pagination/Pagination";
-import Main from "../Main/Main";
+import Main from "../Popular/Popular";
 import Card from "../Card/Card";
 
 import Footer from "../Footer/Footer";
@@ -17,29 +17,34 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [limitMovies, setLimitMovies] = useState(3);
   const [loading, setLoading] = useState(false);
-  const [categoria, setCategoria] = useState("now_playing");
+  const [categoria, setCategoria] = useState("");
 
   const mostrarMas = () => {
     setLimitMovies(limitMovies + 3);
   };
   
+  const handleSearch = (e) => {
+    console.log(e.target.value);
+    setSearch(e.target.value);
+  }
+  
 
   return (
     <>
-      <Header />
+      <Header handleSearch={handleSearch} />
       <Navigation />
-      <Card />
       <Main
         movies={movies}
+        search={search}
         setMovies={setMovies}
         setTrailer={setTrailer}
         limitMovies={limitMovies}
-        categoria={categoria}
-        setCategoria={setCategoria}
       />
+
       <Pagination mostrarMas={mostrarMas} />
       <Footer />
     </>
   );
 }
 export default App;
+{<div className="hero"></div>}

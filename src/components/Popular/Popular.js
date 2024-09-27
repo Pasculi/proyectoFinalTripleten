@@ -1,29 +1,25 @@
-import React, { useEffect, useState } from "react";
-import { API_KEY, TOKEN, URL_BASE, URL_IMAGE } from "../../utils/constants";
-import "./Main.css";
-import api from "../../utils/ApiMovie";
+import React, { useEffect} from "react";
+import { URL_IMAGE } from "../../utils/constants";
+import "./Popular.css";
+import api from "../../utils/ThirdPartyApi";
 
 const Main = ({
   movies,
   setMovies,
   setTrailer,
-  limitMovies,
-  categoria,
-  setCategoria,
+  limitMovies
 }) => {
 
 
 useEffect(() => {
-  setCategoria(categoria);
-  fetch(api.getMovies(categoria))
-    .then((res) => res.json())
+  (api.getPopular())
     .then((data) => {
       const allMovies = data.results;
       console.log(allMovies);
       setMovies(allMovies);
     })
     .catch((error) => console.error(error));
-}, [setCategoria]);
+}, [setMovies]);
 
   return (
     <>
