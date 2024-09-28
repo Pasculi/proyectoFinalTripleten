@@ -2,10 +2,11 @@
   display:flex;
   position:relative;
   width: 57%;
-  height: 50px;
+  height: 100px;
   margin:auto;
   margin-top:20px;
   margin-bottom:50px;
+/*   border:2px solid red ; */
 }
 
 .more{

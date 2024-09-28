@@ -5,12 +5,13 @@ import "./Footer.css"; // Si deseas agregar estilos
 const Footer = () => {
   return (
     <footer className="footer">
+      
       <div className="footer-content">
         <p>
           &copy; {new Date().getFullYear()} Cinema. Todos los derechos
-          reservados. <br /> Diseño y desarrollo realizado por Jorge R. Sepúlveda Turpie.
+          reservados. <br /> Diseño y desarrollo realizado por Jorge R.
+          Sepúlveda Turpie.
         </p>
-       
       </div>
     </footer>
   );

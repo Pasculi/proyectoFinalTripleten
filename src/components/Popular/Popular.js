@@ -2,23 +2,28 @@ import React, { useEffect} from "react";
 import { URL_IMAGE } from "../../utils/constants";
 import "./Popular.css";
 import api from "../../utils/ThirdPartyApi";
+import Preloader from "../Preloader/Preloader";
 
-const Main = ({
+const Popular = ({
   movies,
   setMovies,
   setTrailer,
-  limitMovies
+  limitMovies,
+  setLoading,
+  loading
 }) => {
 
 
-useEffect(() => {
-  (api.getPopular())
+  useEffect(() => {
+    
+    (api.getPopular())
     .then((data) => {
       const allMovies = data.results;
       console.log(allMovies);
       setMovies(allMovies);
     })
-    .catch((error) => console.error(error));
+      .catch((error) => console.error(error));
+    setLoading(false);
 }, [setMovies]);
 
   return (
@@ -57,7 +62,7 @@ useEffect(() => {
   );
 };
 
-export default Main;
+export default Popular;
 
 
 //Mostrar el detalle de una movie

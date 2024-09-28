@@ -1,7 +1,11 @@
-import React from 'react'
+import React from 'react';
+import '../../images/preloader/preloader.css'
 
-const Preloader = ({loading}) => {
-  return <div>{loading ? <h1>'Cargando...'</h1> : " "}</div>;
-}
+const Preloader = () => {
+  return (
+    <div>
+      <i class="circle-preloader"></i>
+    </div>
+  );}
 
 export default Preloader
