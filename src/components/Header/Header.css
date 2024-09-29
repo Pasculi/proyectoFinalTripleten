@@ -1,16 +1,18 @@
 .header {
+  
   padding         : 20px;
   background-color: #440808;
   color           : white;
 }
 
 .header-container {
-  width          : 60%;
+  width: 980px;
   margin         : auto;
   display        : flex;
   flex-direction : row;
   justify-content: space-between;
   align-items    : center;
+  column-gap: 10px;
 }
 
 .header-search {
@@ -38,5 +40,5 @@
   font-weight: bold;
   font-style : italic;
   font-size: 72px;
-  color: #00EF5A;
+  color: #46dfac;
 }

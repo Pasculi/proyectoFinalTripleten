@@ -1,6 +1,7 @@
 import React from "react";
 import { URL_IMAGE } from "../../utils/constants";
 import "./Card.css";
+import { Button } from "@mui/material";
 
 const Card = ({id, title, vote, poster}) => {
 
@@ -19,9 +20,9 @@ const Card = ({id, title, vote, poster}) => {
           </div>
           <div className="card-footer">
             <div>
-              <button className="card-btn" /* onClick={() => setTrailer(trailer)} */>
+              <Button variant="contained" /* onClick={() => setTrailer(trailer)} */>
                 Ver trailer
-              </button>
+              </Button>
             </div>
           </div>
         </div>

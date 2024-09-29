@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./Main.css";
 import api from "../../utils/ThirdPartyApi";
 import Card from "../Card/Card";
-import Skeleton from "../Skeleton/Skeleton";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const Main = ({ limitMovies, loading, setLoading }) => {
   const [movies, setMovies] = useState([]);
@@ -22,23 +23,21 @@ const Main = ({ limitMovies, loading, setLoading }) => {
 
   return (
     <>
-      <div className="main">
+      <div className="main" id="header-start">
         <div className="main-container">
           {loading
-            ? skeletons.map((_, index) => (
-                <Skeleton key={index} /> 
-              ))
-          :movies?.slice(0, limitMovies).map((movie, index) => {
-            return (
-              <Card
-                key={index}
-                id={movie.id}
-                title={movie.original_title}
-                vote={movie.vote_average}
-                poster={movie.poster_path}
-              />
-            );
-          })}
+            ? movies.map((_, index) => <Skeleton key={index} />)
+            : movies?.slice(0, limitMovies).map((movie, index) => {
+                return (
+                  <Card
+                    key={index}
+                    id={movie.id}
+                    title={movie.original_title}
+                    vote={movie.vote_average}
+                    poster={movie.poster_path}
+                  />
+                );
+              })}
         </div>
       </div>
     </>

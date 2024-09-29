@@ -4,7 +4,7 @@ import "./Footer.css"; // Si deseas agregar estilos
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer" id='footer-id'>
       
       <div className="footer-content">
         <p>

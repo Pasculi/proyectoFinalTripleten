@@ -1,7 +1,7 @@
 import React from 'react'
-import './Skeleton.css'
+import './Skeletons.css'
 
-const Skeleton = () => {
+const Skeletons = () => {
   return (
     <>
       <div className="skeleton-card">
@@ -13,4 +13,4 @@ const Skeleton = () => {
   );
 }
 
-export default Skeleton
+export default Skeletons
