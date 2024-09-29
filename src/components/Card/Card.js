@@ -19,7 +19,7 @@ const Card = ({id, title, vote, poster}) => {
           </div>
           <div className="card-footer">
             <div>
-              <button className="card-btn" o/* nClick={() => setTrailer(trailer)} */>
+              <button className="card-btn" /* onClick={() => setTrailer(trailer)} */>
                 Ver trailer
               </button>
             </div>

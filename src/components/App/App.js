@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import YouTube from "react-youtube";
 import Header from "../Header/Header";
 import "./App.css";
@@ -20,6 +20,13 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [categoria, setCategoria] = useState("");
 
+useEffect(() => {
+  const timer = setTimeout(() => {
+    setLoading(false);
+  }, 2000); // 2 segundos de delay simulando la carga
+  return () => clearTimeout(timer);
+}, []);
+
    const mostrarMas = () => {
      setLimitMovies(limitMovies + 3);
   };
@@ -34,8 +41,13 @@ function App() {
       <div className="app">
         <Header handleSearch={handleSearch} />
         <Navigation />
-        <Main limitMovies={limitMovies} setLimitMovies={setLimitMovies} />
-        <Pagination mostrarMas={mostrarMas} />
+        <Main
+          loading={loading}
+          setLoading={setLoading}
+          limitMovies={limitMovies}
+          setLimitMovies={setLimitMovies}
+        />
+        <Pagination limitMovies={limitMovies} mostrarMas={mostrarMas} />
         <Footer />
       </div>
     </>
