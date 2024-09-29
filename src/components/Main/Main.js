@@ -17,6 +17,8 @@ const Main = ({ limitMovies }) => {
       .catch((error) => console.error(error));
   }, []);
 
+ 
+
   return (
     <>
       <div className="main">
@@ -33,6 +35,7 @@ const Main = ({ limitMovies }) => {
               />
             );
           })}
+        
         </div>
       </div>
     </>

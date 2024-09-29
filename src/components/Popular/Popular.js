@@ -2,7 +2,7 @@ import React, { useEffect} from "react";
 import { URL_IMAGE } from "../../utils/constants";
 import "./Popular.css";
 import api from "../../utils/ThirdPartyApi";
-import Preloader from "../Preloader/Preloader";
+
 
 const Popular = ({
   movies,

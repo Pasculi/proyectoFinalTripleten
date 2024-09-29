@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import YouTube from "react-youtube";
 import Header from "../Header/Header";
 import "./App.css";
@@ -8,7 +8,6 @@ import Card from "../Card/Card";
 import api from "../../utils/ThirdPartyApi";
 import Footer from "../Footer/Footer";
 import Navigation from "../Navigation/Navigation";
-import Preloader from "../Preloader/Preloader";
 import Main from "../Main/Main";
 
 function App() {
@@ -21,9 +20,10 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [categoria, setCategoria] = useState("");
 
-  const mostrarMas = () => {
-    setLimitMovies(limitMovies + 3);
+   const mostrarMas = () => {
+     setLimitMovies(limitMovies + 3);
   };
+  
   const handleSearch = (e) => {
     console.log(e.target.value);
     setSearch(e.target.value);
@@ -31,21 +31,13 @@ function App() {
 
   return (
     <>
-      <Header handleSearch={handleSearch} />
-      <Navigation />
-      <Main limitMovies={limitMovies} />
-      {/* <Preloader />
-      <Popular
-      movies={movies}
-      search={search}
-      setMovies={setMovies}
-      setTrailer={setTrailer}
-      limitMovies={limitMovies}
-      setLoading={setLoading}
-      />
-      */}
-      <Pagination mostrarMas={mostrarMas} />
-      <Footer />
+      <div className="app">
+        <Header handleSearch={handleSearch} />
+        <Navigation />
+        <Main limitMovies={limitMovies} setLimitMovies={setLimitMovies} />
+        <Pagination mostrarMas={mostrarMas} />
+        <Footer />
+      </div>
     </>
   );
 }
