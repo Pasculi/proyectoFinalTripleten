@@ -31,6 +31,11 @@ useEffect(() => {
   return () => clearTimeout(timer);
 }, []);
 
+  const netxPage = () => {
+    setCurrentPage(currentPage + 1);
+    console.log('Hola')
+    
+  }
    const mostrarMas = () => {
      setLimitMovies(limitMovies + 3);
   };
@@ -52,7 +57,11 @@ useEffect(() => {
           setLimitMovies={setLimitMovies}
           currentPage={currentPage}
         />
-        <Pagination limitMovies={limitMovies} mostrarMas={mostrarMas} />
+        <Pagination
+          netxPage={netxPage}
+          limitMovies={limitMovies}
+          mostrarMas={mostrarMas}
+        />
         <Footer />
       </div>
     </>

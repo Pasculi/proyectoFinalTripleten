@@ -1,20 +1,44 @@
 import React from "react";
 import "./Skeletons.css";
-import { Card, Skeleton } from "@mui/material";
+import { Card, createTheme, Skeleton, ThemeProvider } from "@mui/material";
 
 const Skeletons = () => {
+
+  const theme = createTheme({
+    palette: {
+      background: {
+        skeletor: "#a0aecd",
+      },
+    },
+  });
+
   return (
     <>
-      <Card sx={{ maxWidth: 250, m: 2 }}>
-        <Skeleton
-          sx={{ m: 2 }}
-          variant="rectangular"
-          width={218}
-          height={346}
-        />
-        <Skeleton sx={{ m: 2 }} variant="rectangular" width={218} height={24} />
-        <Skeleton sx={{ m: 2 }} variant="rectangular" width={218} height={36} />
-      </Card>
+      <ThemeProvider theme={theme}>
+        <Card sx={{ maxWidth: 250, m: 2 }}>
+          <Skeleton
+            sx={{ m: 2, bgcolor: "background.skeletor" }}
+            animation="pulse"
+            variant="rectangular"
+            color="grey"
+            highlight="black"
+            width={218}
+            height={346}
+          />
+          <Skeleton
+            sx={{ m: 2, bgcolor: "background.skeletor" }}
+            variant="rectangular"
+            width={218}
+            height={24}
+          />
+          <Skeleton
+            sx={{ m: 2, bgcolor: "background.skeletor" }}
+            variant="rectangular"
+            width={218}
+            height={36}
+          />
+        </Card>
+      </ThemeProvider>
       {/*  */}
       {/* <Skeleton
           className="skeleton-image"

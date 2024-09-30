@@ -4,18 +4,20 @@ class ApiMovie {
     this._url = URL_BASE;
     this._keyApi = API_KEY;
   }
-  
+
   setToken(API_KEY) {
     this._keyApi = `Bearer ${API_KEY}`;
   }
- 
 
-  getNowPlaying() {
-    return fetch(`${this._url}/now_playing?api_key=${this._keyApi}`, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((response) => response.json());
+  getNowPlaying(page) {
+    return fetch(
+      `${this._url}/now_playing?api_key=${this._keyApi}&page=${page}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    ).then((response) => response.json());
   }
 
   getPopular(page) {
@@ -26,15 +28,15 @@ class ApiMovie {
     }).then((response) => response.json());
   }
 
-  getTopRate() {
-    return fetch(`${this._url}/top_rate?api_key=${this._keyApi}`, {
+  getTopRate(page) {
+    return fetch(`${this._url}/top_rate?api_key=${this._keyApi}&page=${page}`, {
       headers: {
         "Content-Type": "application/json",
       },
     }).then((response) => response.json());
   }
-  getUmcoming() {
-    return fetch(`${this._url}/upcoming?api_key=${this._keyApi}`, {
+  getUmcoming(page) {
+    return fetch(`${this._url}/upcoming?api_key=${this._keyApi}&page=${page}`, {
       headers: {
         "Content-Type": "application/json",
       },
