@@ -5,9 +5,9 @@ import { Button } from "@mui/material";
 import FileUploadIcon from "@mui/icons-material/FileUpload";
 import ForwardIcon from '@mui/icons-material/Forward';
 
-const Pagination = ({ mostrarMas, limitMovies, nextPage }) => {
+const Pagination = ({ mostrarMas, limitMovies, chargePage }) => {
   console.log(limitMovies);
-  console.log(nextPage);
+ 
   return (
     <>
       <nav className="pagination">
@@ -19,26 +19,26 @@ const Pagination = ({ mostrarMas, limitMovies, nextPage }) => {
               </Button>
             </Anchor>
           ) : (
-              <>
-            <Anchor smooth to="#footer-id">
-              <Button
-                variant="contained"
-                onClick={mostrarMas}
-                endIcon={<ForwardIcon />}
-              >
-                Ver mas...
-              </Button>
-            </Anchor>
-              </>
+            <>
+              <Anchor smooth to="#footer-id">
+                <Button
+                  variant="contained"
+                  onClick={mostrarMas}
+                  endIcon={<ForwardIcon />}
+                >
+                  Ver mas...
+                </Button>
+              </Anchor>
+            </>
           )}
         </div>
-              <Button
-                variant="contained"
-                onClick={nextPage}
-                endIcon={<ForwardIcon />}
-              >
-                Next page
-              </Button>
+        <Button
+          variant="contained"
+          onClick={chargePage}
+          endIcon={<ForwardIcon />}
+        >
+          Next page
+        </Button>
       </nav>
     </>
   );

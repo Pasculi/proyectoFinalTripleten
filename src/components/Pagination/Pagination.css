@@ -8,8 +8,6 @@
   margin-bottom:50px;
   justify-content: flex-end;
   align-items: center;
-border:1px solid red;
-
 }
 @media screen and (max-width: 998px) {
   .pagination {

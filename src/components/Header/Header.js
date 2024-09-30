@@ -1,23 +1,30 @@
 import React from "react";
-import "./Header.css"; 
-import logo from "../../images/logo.webp"; 
+import "./Header.css";
+import logo from "../../images/logo.webp";
+import { Button } from "@mui/material";
 
-const Header = ({ handleSearch }) => {
-
+const Header = ({ setSearchKey, handleSearchMovie }) => {
   return (
     <header className="header">
       <div className="header-container">
         <div className="header-logo-container">
           <img src={logo} alt="Cinema Logo" className="logo" />
         </div>
-          <h1 className='header-titulo'>MovieLand</h1>
+        <h1 className="header-titulo">MovieLand</h1>
         <br />
-        <input
-          className="header-search"
-          type="text"
-          placeholder="Buscar película..."
-          onChange={handleSearch}
-        />
+        <form onSumbit={handleSearchMovie}>
+          <input
+            className="header-search"
+            type="text"
+            placeholder="Buscar película..."
+            onChange={(e) => {
+              setSearchKey(e.target.value);
+            }}
+          />
+          <Button variant="contained" type="submit">
+            Search
+          </Button>
+        </form>
       </div>
     </header>
   );
