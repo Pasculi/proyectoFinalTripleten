@@ -18,8 +18,8 @@ class ApiMovie {
     }).then((response) => response.json());
   }
 
-  getPopular() {
-    return fetch(`${this._url}/popular?api_key=${this._keyApi}`, {
+  getPopular(page) {
+    return fetch(`${this._url}/popular?api_key=${this._keyApi}&page=${page}`, {
       headers: {
         "Content-Type": "application/json",
       },

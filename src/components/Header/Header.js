@@ -1,8 +1,9 @@
 import React from "react";
-import "./Header.css"; // Si quieres agregar estilos personalizados
-import logo from "../../images/logo.webp"; // Asegúrate de la ruta correcta al logo
+import "./Header.css"; 
+import logo from "../../images/logo.webp"; 
 
 const Header = ({ handleSearch }) => {
+
   return (
     <header className="header">
       <div className="header-container">

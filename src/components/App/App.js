@@ -9,6 +9,9 @@ import api from "../../utils/ThirdPartyApi";
 import Footer from "../Footer/Footer";
 import Navigation from "../Navigation/Navigation";
 import Main from "../Main/Main";
+import Upcoming from "../Upcomming/Upcoming";
+import Skeletons from "../Skeletons/Skeletons";
+
 
 function App() {
   const [search, setSearch] = useState("");
@@ -19,11 +22,12 @@ function App() {
   const [limitMovies, setLimitMovies] = useState(3);
   const [loading, setLoading] = useState(true);
   const [categoria, setCategoria] = useState("");
+  
 
 useEffect(() => {
   const timer = setTimeout(() => {
     setLoading(false);
-  }, 2000); // 2 segundos de delay simulando la carga
+  }, 4000); // 2 segundos de delay simulando la carga
   return () => clearTimeout(timer);
 }, []);
 
@@ -46,6 +50,7 @@ useEffect(() => {
           setLoading={setLoading}
           limitMovies={limitMovies}
           setLimitMovies={setLimitMovies}
+          currentPage={currentPage}
         />
         <Pagination limitMovies={limitMovies} mostrarMas={mostrarMas} />
         <Footer />

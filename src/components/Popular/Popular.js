@@ -9,8 +9,7 @@ const Popular = ({
   setMovies,
   setTrailer,
   limitMovies,
-  setLoading,
-  loading
+  setLoading
 }) => {
 
 

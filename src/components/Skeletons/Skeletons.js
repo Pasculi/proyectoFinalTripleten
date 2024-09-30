@@ -1,16 +1,17 @@
-import React from 'react'
-import './Skeletons.css'
+import React from "react";
+import "./Skeletons.css";
+import { Skeleton } from "@mui/material";
 
 const Skeletons = () => {
   return (
     <>
-      <div className="skeleton-card">
-        <div className="skeleton-image" />
-        <div className="skeleton-title" />
-        <div className="skeleton-vote" />
+      <div className="skeleton">
+        <Skeleton width={250} height={375} color='grey' highlight='black'/>
+        <Skeleton width={230} height={30} />
+        <Skeleton width={120} height={24} />
       </div>
     </>
   );
-}
+};
 
-export default Skeletons
+export default Skeletons;
