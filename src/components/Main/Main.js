@@ -24,23 +24,21 @@ const Main = ({ limitMovies, loading, setLoading, currentPage }) => {
     <>
       <div className="main" id="header-start">
         <div className="main-container">
-          {loading ? [1,2,3].map((_, index) => {
-            return (
-             
-              <Skeletons />
-           ) 
-          }
-          ) : movies?.slice(0, limitMovies).map((movie, index) => {
-            return (
-              <Card
-                key={index}
-                id={movie.id}
-                title={movie.original_title}
-                vote={movie.vote_average}
-                poster={movie.poster_path}
-              />
-            );
-          })}
+          {loading
+            ? [1, 2, 3].map((_, index) => {
+                return <Skeletons />;
+              })
+            : movies?.slice(0, limitMovies).map((movie, index) => {
+                return (
+                  <Card
+                    key={index}
+                    id={movie.id}
+                    title={movie.original_title}
+                    vote={movie.vote_average}
+                    poster={movie.poster_path}
+                  />
+                );
+              })}
         </div>
       </div>
     </>
