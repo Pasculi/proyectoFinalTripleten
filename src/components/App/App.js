@@ -31,12 +31,12 @@ function App() {
 
   const findMovies = () => {
     api
-      .getFindMovie(searchKey)
+      .getFindOne(searchKey)
       .then((data) => {
         const allMovies = data.results;
         console.log(data.results);
         setMovies(allMovies);
-        setMovie(allMovies[0])
+        setMovie(allMovies[0]);
       })
       .catch((error) => console.error(error));
   };
@@ -51,7 +51,8 @@ function App() {
 
   const handleSearchMovie = (e) => {
     e.preventDefault();
-    findMovies(filterMovies);
+    console.log(searchKey);
+    findMovies(searchKey);
   };
 
   useEffect(() => {
@@ -81,7 +82,7 @@ function App() {
           setLimitMovies={setLimitMovies}
           currentPage={currentPage}
           movies={movies}
-          /* filterMovies={filterMovies} */
+          filterMovies={filterMovies}
         />
         <Pagination
           /* chargePage={chargePage} */

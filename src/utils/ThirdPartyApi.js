@@ -10,7 +10,8 @@ class ApiMovie {
   }
 
 
-  getFindMovie(id) {
+ /*  getFindMovie(id) {
+    console.log(id)
     const type = id ? 'search' : 'discover';
     const url = `${this._url}/${type}/movie?api_key=${this._keyApi}`;
 
@@ -19,15 +20,16 @@ class ApiMovie {
         "Content-Type": "application/json",
       },
     }).then((response) => response.json());
-  }
+  } */
 
-  /* getFindOne(id) {
-    return fetch(`${this._url}/find/${id}?api_key=${this._keyApi}`, {
+  getFindOne(id) {
+    const type = id ? "search" : "discover";
+    return fetch(`${this._url}/${type}/movie?query=${id}&api_key=${this._keyApi}`, {
       headers: {
         "Content-Type": "application/json",
       },
     }).then((response) => response.json());
-  } */
+  }
 
   getNowPlaying(page) {
     return fetch(

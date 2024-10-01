@@ -12,7 +12,7 @@ const Header = ({ setSearchKey, handleSearchMovie }) => {
         </div>
         <h1 className="header-titulo">MovieLand</h1>
         <br />
-        <form onSumbit={handleSearchMovie}>
+        <form onSubmit={handleSearchMovie}>
           <input
             className="header-search"
             type="text"

@@ -32,13 +32,7 @@ const Pagination = ({ mostrarMas, limitMovies, chargePage }) => {
             </>
           )}
         </div>
-        <Button
-          variant="contained"
-          onClick={chargePage}
-          endIcon={<ForwardIcon />}
-        >
-          Next page
-        </Button>
+        
       </nav>
     </>
   );

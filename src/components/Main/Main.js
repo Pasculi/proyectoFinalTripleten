@@ -12,7 +12,7 @@ const Main = ({ limitMovies, loading, movies, filterMovies }) => {
             ? [1, 2, 3].map((_, index) => {
                 return <Skeletons key={index} />;
               })
-            : movies?.slice(0, limitMovies).map((movie, index) => {
+            : filterMovies?.slice(0, limitMovies).map((movie, index) => {
                 return (
                   <Card
                     key={index}
