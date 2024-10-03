@@ -73,6 +73,26 @@ class ApiMovie {
       }
     ).then((response) => response.json());
   }
+  getDetailsMovie(id) {
+    return fetch(`${this._url}/movie/${id}?api_key=${this._keyApi}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    ).then((response) => response.json());
+    
+  }
+  getMovieId(id) {
+    return fetch(`${this._url}/movie/${id}/videos?api_key=${this._keyApi}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    ).then((response) => response.json());
+
+  }
 }
 const api = new ApiMovie(
   'https://api.themoviedb.org/3', '15560b6fce345cc726497d90bc5d685c'

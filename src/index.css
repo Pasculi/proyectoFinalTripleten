@@ -10,7 +10,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+  display       :flex;
+flex-direction: column;
+height        : 100%;
+position      : relative;
+background    : linear-gradient(rgba(5, 12, 12, 0.75), rgba(5, 12, 12, 0.75)),
+url(../src/images/background.jpg) no-repeat center center fixed;
+background-size: cover;
+height         : 100%;
 }
 
 code {

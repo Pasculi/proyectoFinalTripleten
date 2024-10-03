@@ -2,6 +2,8 @@ import React from "react";
 import "./Header.css";
 import logo from "../../images/logo.webp";
 import { Button } from "@mui/material";
+import ImageSearchTwoToneIcon from "@mui/icons-material/ImageSearchTwoTone";
+import { Link } from "react-router-dom";
 
 const Header = ({ setSearchKey, handleSearchMovie }) => {
   return (
@@ -20,10 +22,13 @@ const Header = ({ setSearchKey, handleSearchMovie }) => {
             onChange={(e) => {
               setSearchKey(e.target.value);
             }}
-          />
-          <Button variant="contained" type="submit">
-            Search
-          </Button>
+          />{" "}
+          <Link to="/popular"></Link>
+          <Button
+            variant="contained"
+            endIcon={<ImageSearchTwoToneIcon />}
+            type="submit"
+          ></Button>
         </form>
       </div>
     </header>

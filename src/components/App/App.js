@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
-import YouTube from "react-youtube";
-import Header from "../Header/Header";
 import "./App.css";
-import Pagination from "../Pagination/Pagination";
 import api from "../../utils/ThirdPartyApi";
-import Footer from "../Footer/Footer";
-import Navigation from "../Navigation/Navigation";
 import Main from "../Main/Main";
+import { Route, Routes } from "react-router-dom";
+import TopRate from "../TopRate/TopRate";
+import About from "../About/About";
+import Upcoming from "../Upcomming/Upcoming";
+import Layout from "../Layout/Layout";
+import DetailsMovie from "../DetailsMovie/DetailsMovie";
 
 function App() {
   const [searchKey, setSearchKey] = useState("");
 
   const [trailer, setTrailer] = useState(null);
-  const [movie, setMovie] = useState({ title: 'Loading Movies' })
-  const [playing, setPlaying] = useState(false)
+  const [movie, setMovie] = useState({ title: "Loading Movies" });
+  const [playing, setPlaying] = useState(false);
 
   const [moviesPerPage, setMoviesPerPage] = useState(6);
   const [currentPage, setCurrentPage] = useState(20);
@@ -41,13 +42,12 @@ function App() {
       .catch((error) => console.error(error));
   };
 
-  console.log(searchKey)
+  console.log(searchKey);
   const filterMovies = movies.filter((movies) =>
     movies.title.toLowerCase().includes(searchKey.toLowerCase())
   );
 
   console.log(filterMovies);
-
 
   const handleSearchMovie = (e) => {
     e.preventDefault();
@@ -60,22 +60,73 @@ function App() {
     setLoading(loading);
   }, []);
 
-
   const mostrarMas = () => {
     setLimitMovies(limitMovies + 3);
   };
 
-
   return (
     <>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Layout
+              handleSearchMovie={handleSearchMovie}
+              setSearchKey={setSearchKey}
+              searchKey={searchKey}
+            />
+          }
+        >
+          <Route
+            index
+            element={
+              <Main
+                loading={loading}
+                setLoading={setLoading}
+                limitMovies={limitMovies}
+                setLimitMovies={setLimitMovies}
+                currentPage={currentPage}
+                movies={movies}
+                filterMovies={filterMovies}
+                mostrarMas={mostrarMas}
+              />
+            }
+          />
+          <Route
+            path="popular/*"
+            element={
+              <Main
+                loading={loading}
+                setLoading={setLoading}
+                limitMovies={limitMovies}
+                setLimitMovies={setLimitMovies}
+                currentPage={currentPage}
+                movies={movies}
+                filterMovies={filterMovies}
+                mostrarMas={mostrarMas}
+              />
+            }
+          />
+          <Route path="top-rated/*" element={<TopRate />} />
+          <Route path="upcoming" element={<Upcoming />} />
+          <Route path="about" element={<About />} />
+          <Route path="details/:id" element={<DetailsMovie />} />
+        </Route>
+
+        {/* <Route path="/" element={<Main />} />
+        <Route path="top-rate" element={<TopRate />} />
+        <Route path="upcoming" element={<Upcoming />} />
+        <Route path="about" element={<About />} /> */}
+      </Routes>
+
       <div className="app">
-        <Header
+        {/*  <Header
           handleSearchMovie={handleSearchMovie}
           setSearchKey={setSearchKey}
           searchKey={searchKey}
         />
-        <Navigation />
-        <Main
+        <Navigation /> */}
+        {/* <Main
           loading={loading}
           setLoading={setLoading}
           limitMovies={limitMovies}
@@ -84,12 +135,13 @@ function App() {
           movies={movies}
           filterMovies={filterMovies}
         />
+        <Upcoming />
+        <About />
         <Pagination
-          /* chargePage={chargePage} */
           limitMovies={limitMovies}
           mostrarMas={mostrarMas}
         />
-        <Footer />
+        <Footer /> */}
       </div>
     </>
   );

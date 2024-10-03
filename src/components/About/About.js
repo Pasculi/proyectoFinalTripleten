@@ -1,10 +1,11 @@
 import React from 'react'
+import './About.css'
 
 const About = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <div className="about">Autor de la página</div>
+    </>
   )
 }
 

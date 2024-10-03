@@ -4,11 +4,11 @@ import "./Upcoming.css";
 
 const Upcoming = () => {
   return (
-    <>
+ 
       <div className="upcoming">
-        <h1>Upcoming</h1>
+        <div>Próximos estrenos</div>
       </div>
-    </>
+
   );
 };
 

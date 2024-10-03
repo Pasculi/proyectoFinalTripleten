@@ -2,10 +2,16 @@ import React from "react";
 import "./Main.css";
 import Card from "../Card/Card";
 import Skeletons from "../Skeletons/Skeletons";
+import Pagination from "../Pagination/Pagination";
+import DetailsMovie from "../DetailsMovie/DetailsMovie";
+import { Route, Routes } from "react-router-dom";
 
-const Main = ({ limitMovies, loading, movies, filterMovies }) => {
+const Main = ({ limitMovies, loading, mostrarMas, filterMovies }) => {
   return (
     <>
+      {/* <Routes>
+        <Route path=":id" element={<DetailsMovie />} />
+      </Routes> */}
       <div className="main" id="header-start">
         <div className="main-container">
           {loading
@@ -25,6 +31,7 @@ const Main = ({ limitMovies, loading, movies, filterMovies }) => {
               })}
         </div>
       </div>
+      <Pagination limitMovies={limitMovies} mostrarMas={mostrarMas} />
     </>
   );
 };
