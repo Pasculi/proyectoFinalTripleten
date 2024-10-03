@@ -14,12 +14,11 @@ const DetailsMovie = () => {
 
   const { id } = useParams();
 
-  console.log(id);
 
   const detailsMovie = () => {
     api.getDetailsMovie(id).then((response) => {
       const result = response;
-      console.log(result);
+  
       setDetail(result);
     });
   };
@@ -27,7 +26,7 @@ const DetailsMovie = () => {
     api.getMovieId(id).then((response) => {
       const datailKeyMovie = response.results;
       const firstMovie = (datailKeyMovie[0].key);
-      console.log(firstMovie.key);
+  
       datailKeyMovie.map((oficial) => {
         
         if (oficial.name === 'Official Trailer') {

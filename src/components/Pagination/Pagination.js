@@ -6,7 +6,6 @@ import FileUploadIcon from "@mui/icons-material/FileUpload";
 import ForwardIcon from '@mui/icons-material/Forward';
 
 const Pagination = ({ mostrarMas, limitMovies}) => {
-  console.log(limitMovies);
  
   return (
     <>

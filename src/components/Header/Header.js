@@ -23,7 +23,6 @@ const Header = ({ setSearchKey, handleSearchMovie }) => {
               setSearchKey(e.target.value);
             }}
           />{" "}
-          <Link to="/popular"></Link>
           <Button
             variant="contained"
             endIcon={<ImageSearchTwoToneIcon />}

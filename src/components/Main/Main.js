@@ -9,9 +9,6 @@ import { Route, Routes } from "react-router-dom";
 const Main = ({ limitMovies, loading, mostrarMas, filterMovies }) => {
   return (
     <>
-      {/* <Routes>
-        <Route path=":id" element={<DetailsMovie />} />
-      </Routes> */}
       <div className="main" id="header-start">
         <div className="main-container">
           {loading
@@ -31,7 +28,9 @@ const Main = ({ limitMovies, loading, mostrarMas, filterMovies }) => {
               })}
         </div>
       </div>
-      <Pagination limitMovies={limitMovies} mostrarMas={mostrarMas} />
+      {
+        filterMovies?.length >= 0 ?<Pagination limitMovies={limitMovies} mostrarMas={mostrarMas} /> : ''
+      }
     </>
   );
 };

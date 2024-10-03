@@ -9,8 +9,7 @@ class ApiMovie {
     this._keyApi = `Bearer ${API_KEY}`;
   }
 
-
- /*  getFindMovie(id) {
+  /*  getFindMovie(id) {
     console.log(id)
     const type = id ? 'search' : 'discover';
     const url = `${this._url}/${type}/movie?api_key=${this._keyApi}`;
@@ -24,11 +23,14 @@ class ApiMovie {
 
   getFindOne(id) {
     const type = id ? "search" : "discover";
-    return fetch(`${this._url}/${type}/movie?query=${id}&api_key=${this._keyApi}`, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((response) => response.json());
+    return fetch(
+      `${this._url}/${type}/movie?query=${id}&api_key=${this._keyApi}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    ).then((response) => response.json());
   }
 
   getNowPlaying(page) {
@@ -74,24 +76,29 @@ class ApiMovie {
     ).then((response) => response.json());
   }
   getDetailsMovie(id) {
-    return fetch(`${this._url}/movie/${id}?api_key=${this._keyApi}`,
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    ).then((response) => response.json());
-    
+    return fetch(`${this._url}/movie/${id}?api_key=${this._keyApi}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((response) => response.json());
   }
   getMovieId(id) {
-    return fetch(`${this._url}/movie/${id}/videos?api_key=${this._keyApi}`,
+    return fetch(`${this._url}/movie/${id}/videos?api_key=${this._keyApi}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((response) => response.json());
+  }
+  getSearchMovies(id) {
+    console.log(id.query)
+      return fetch(
+      `${this._url}/search/movie?query=${id}&api_key=${this._keyApi}`,
       {
         headers: {
           "Content-Type": "application/json",
         },
       }
     ).then((response) => response.json());
-
   }
 }
 const api = new ApiMovie(
