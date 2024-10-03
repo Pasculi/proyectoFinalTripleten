@@ -39,11 +39,6 @@ function App() {
       .catch((error) => console.error(error));
   };
 
-  const filterMovies = movies.filter((movies) =>
-    movies.title.toLowerCase().includes(searchKey.toLowerCase())
-  );
-
-
   const handleSearchMovie = (e) => {
     e.preventDefault();
     setSearchKey("");
@@ -84,13 +79,12 @@ function App() {
                 setLimitMovies={setLimitMovies}
                 currentPage={currentPage}
                 movies={movies}
-                filterMovies={filterMovies}
                 mostrarMas={mostrarMas}
               />
             }
           />
           <Route
-            path="popular/*"
+            path="popular"
             element={
               <Main
                 loading={loading}
@@ -99,7 +93,6 @@ function App() {
                 setLimitMovies={setLimitMovies}
                 currentPage={currentPage}
                 movies={movies}
-                filterMovies={filterMovies}
                 mostrarMas={mostrarMas}
               />
             }

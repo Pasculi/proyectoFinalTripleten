@@ -66,7 +66,7 @@ const DetailsMovie = () => {
 
       <div className="details-info">
         <h1 className="details-title"> {detail?.title}</h1>
-        <h3 className="details-view">Overview: {detail?.overview}</h3>
+        <h3 className="details-view"> {detail?.overview}</h3>
         <div>
           <div>
             <h3 className="details-view">

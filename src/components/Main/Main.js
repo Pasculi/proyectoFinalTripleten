@@ -6,7 +6,7 @@ import Pagination from "../Pagination/Pagination";
 import DetailsMovie from "../DetailsMovie/DetailsMovie";
 import { Route, Routes } from "react-router-dom";
 
-const Main = ({ limitMovies, loading, mostrarMas, filterMovies }) => {
+const Main = ({ limitMovies, loading, mostrarMas, movies }) => {
   return (
     <>
       <div className="main" id="header-start">
@@ -15,7 +15,7 @@ const Main = ({ limitMovies, loading, mostrarMas, filterMovies }) => {
             ? [1, 2, 3].map((_, index) => {
                 return <Skeletons key={index} />;
               })
-            : filterMovies?.slice(0, limitMovies).map((movie, index) => {
+            : movies?.slice(0, limitMovies).map((movie, index) => {
                 return (
                   <Card
                     key={index}
@@ -29,7 +29,7 @@ const Main = ({ limitMovies, loading, mostrarMas, filterMovies }) => {
         </div>
       </div>
       {
-        filterMovies?.length >= 0 ?<Pagination limitMovies={limitMovies} mostrarMas={mostrarMas} /> : ''
+        movies?.length >= 0 ?<Pagination limitMovies={limitMovies} mostrarMas={mostrarMas} /> : ''
       }
     </>
   );

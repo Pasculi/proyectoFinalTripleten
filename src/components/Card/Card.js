@@ -5,8 +5,6 @@ import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const Card = ({ id, title, vote, poster }) => {
-  
-
   return (
     <>
       <div className="card-item" key={id}>
@@ -17,7 +15,6 @@ const Card = ({ id, title, vote, poster }) => {
             className="card-image-poster"
             src={`${URL_IMAGE}${poster}`}
             alt={title}
-
           />
         </Link>
 
@@ -26,9 +23,9 @@ const Card = ({ id, title, vote, poster }) => {
         </div>
         <div className="card-footer">
           <div>
-            <Button variant="contained">
-              Ver detalle
-            </Button>
+            <Link to={`/details/${id}`}>
+              <Button variant="contained">ver detalle</Button>
+            </Link>
           </div>
         </div>
       </div>
