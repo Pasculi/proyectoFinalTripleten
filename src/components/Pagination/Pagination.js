@@ -19,7 +19,7 @@ const Pagination = ({ mostrarMas, limitMovies}) => {
             </Anchor>
           ) : (
             <>
-              <Anchor smooth to="#footer-id">
+              <Anchor smooth to="?query=iron#footer-id">
                 <Button
                   variant="contained"
                   onClick={mostrarMas}

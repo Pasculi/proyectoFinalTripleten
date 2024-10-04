@@ -9,6 +9,7 @@ import Upcoming from "../Upcomming/Upcoming";
 import Layout from "../Layout/Layout";
 import DetailsMovie from "../DetailsMovie/DetailsMovie";
 import SearchResults from "../SearchResults/SearchResults";
+import NotFound from "../NotFound/NotFound";
 
 
 function App() {
@@ -112,6 +113,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="details/:id" element={<DetailsMovie />} />
         </Route>
+          <Route path='*' element={<NotFound />} />
       </Routes>
 
       <div className="app"></div>
