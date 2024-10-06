@@ -85,29 +85,32 @@ const DetailsMovie = () => {
           <div className="details-trailer">
             {playing ? (
               <ReactPlayer
+                className="detail-trailer-width"
                 url={`https://www.youtube.com/watch?v=${trailer}`}
                 controls
-                width={"394px"}
-                height={"185px"}
+                width={"100%"}
+                height={"230px"}
               />
             ) : (
                 <ReactPlayer
+                  className="detail-trailer-width"
                   url={`https://www.youtube.com/watch?v=${defaultTrailer}`}
                   controls
-                  width={"394px"}
-                  height={"185px"}
+                  width={"100%"}
+                  height={"230px"}
                 />
               ) || trailer === null ? (
               <div className="video-no-disponible">
                 <img
-                  width={"394px"}
-                  height={"185px"}
+                  className="detail-trailer-width"
+                  width={"100%"}
+                  height={"230px"}
                   src={NotAvailableVideo}
                   alt=""
                 />
               </div>
             ) : (
-              ''
+              ""
             )}
           </div>
         </div>
