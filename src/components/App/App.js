@@ -5,13 +5,13 @@ import Main from "../Main/Main";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import TopRate from "../TopRate/TopRate";
 import About from "../About/About";
-import Upcoming from "../Upcomming/Upcoming";
+import Upcoming from "../Upcoming/Upcoming";
 import Layout from "../Layout/Layout";
 import DetailsMovie from "../DetailsMovie/DetailsMovie";
 import SearchResults from "../SearchResults/SearchResults";
 import NotFound from "../NotFound/NotFound";
 import SearchContext from "../contexts/SearchContext/SearchContext";
-import { Navigation } from "@mui/icons-material";
+
 
 function App() {
   const [searchKey, setSearchKey] = useState("");

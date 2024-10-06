@@ -31,7 +31,7 @@ const About = () => {
           <img className="user-avatar" src={user.avatar_url} alt="" />
         </div>
         <p className="user-bio">
-          Soy un ingeniero en informática con más de 15 años de experiencia en
+          Soy ingeniero en informática con más de 15 años de experiencia en
           el sector de las telecomunicaciones, donde he trabajado como
           especialista en monitoreo y control en Telsur Chile, una empresa líder
           en servicios de voz, datos, y televisión. Mi trabajo consiste en
@@ -51,7 +51,7 @@ const About = () => {
           <Link to={user.html_url} target="_blank" rel="">
             {user.html_url}
           </Link>
-          <p className="user-git">Repossitorios github</p>
+          <p className="user-git">Repositorios github</p>
           <div className="user-repos">{user.public_repos}</div>
         </div>
       </div>

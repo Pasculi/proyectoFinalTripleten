@@ -11,9 +11,26 @@
 }
 @media screen and (max-width: 998px) {
   .pagination {
-    width: 100%;
+    width: 520px;
     padding:0 10px;
   }
 
   
+}
+
+@media screen and (max-width: 998px) {
+  .pagination {
+    width  : 520px;
+    padding: 0 10px;
+  }
+
+
+}
+@media screen and (max-width: 954px) {
+  .pagination {
+    width  : 250px;
+    padding: 0 10px;
+  }
+
+
 }

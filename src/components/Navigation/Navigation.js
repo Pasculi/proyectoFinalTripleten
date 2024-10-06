@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Navigation.css'
 import { Link } from 'react-router-dom';
-import Main from '../Main/Main';
 
 
-const Navigation = ({ limitMovies, setLimitMovies }) => {
+
+
+const Navigation = ({ setLimitMovies }) => {
 
   const handleResetLimit = () => {
     setLimitMovies(3)
@@ -12,6 +13,7 @@ const Navigation = ({ limitMovies, setLimitMovies }) => {
 
   return (
     <div className="nav">
+      
       <nav className="nav-menu">
         <ul>
           <li>

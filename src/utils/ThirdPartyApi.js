@@ -1,4 +1,3 @@
-
 class ApiMovie {
   constructor(URL_BASE, API_KEY) {
     this._url = URL_BASE;
@@ -8,7 +7,6 @@ class ApiMovie {
   setToken(API_KEY) {
     this._keyApi = `Bearer ${API_KEY}`;
   }
-
 
   getFindOne(id) {
     const type = id ? "search" : "discover";
@@ -91,7 +89,8 @@ class ApiMovie {
   }
 }
 const api = new ApiMovie(
-  'https://api.themoviedb.org/3', '15560b6fce345cc726497d90bc5d685c'
+  "https://api.themoviedb.org/3",
+  "15560b6fce345cc726497d90bc5d685c"
 );
 
 export default api;

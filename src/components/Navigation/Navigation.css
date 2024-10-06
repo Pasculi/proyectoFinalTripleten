@@ -22,5 +22,13 @@
 
 .nav-menu a:hover {
   color: #ffcc00;
-  /* Un color amarillo al pasar el ratón */
+
+}
+
+@media screen and (max-width: 550px){
+  .nav-menu ul{
+    visibility: hidden;
+
+  }
+
 }

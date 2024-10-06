@@ -75,3 +75,55 @@
 .user-git{
   color: #000000c5;
 }
+
+@media screen and (max-width: 1115px) {
+  .user-container {
+    width  : 600px;
+  }
+  .user-avatar{
+    width: 150px;
+    height: 150px;
+  }
+  .user-url{
+    flex-direction: column;
+    width: 50%;
+    height: fit-content;
+    padding:10px 0;
+    border-radius: 8px;
+  }
+  .user-conatiner-info{
+    align-items: center;
+  }
+
+
+}
+
+@media screen and (max-width: 600px) {
+  .user-container {
+    width: 100%;
+    padding:10px;
+  }
+  .user-conatiner-info { 
+    flex-direction: column;
+  }
+  .user-conatiner-presentation{
+    align-items: center;
+  }
+  .user-about{
+    text-align: center;
+  }
+  .user-subtitle{
+    width: 100%;
+    text-align: center;
+  }
+  .user-avatar{
+    margin-top:10px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+
+  .user-url{
+    width: 100%;
+  }
+}
